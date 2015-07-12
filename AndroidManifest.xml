@@ -1,0 +1,82 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.florentrevest.xound"
+    android:versionCode="8"
+    android:versionName="1.1.2" xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="17" />
+
+  	<uses-permission android:name="android.permission.INTERNET" />
+  	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+  	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+  	<uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Holo.Theme.Light.DarkActionBar" 
+        android:allowBackup="false">
+        <activity
+            android:name="com.florentrevest.xound.MainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden">
+        	<intent-filter>
+    	        <action android:name="android.intent.action.MAIN" />
+                
+	            <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.APP_MUSIC" />
+            </intent-filter>
+            <meta-data android:name="android.app.default_searchable"
+                android:value=".SearchableActivity" />
+        </activity>
+        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".SearchableActivity" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:name=".HelpActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+	    </activity>
+	    <activity android:name=".EqualizerActivity"
+         android:label="@string/equalizer">
+            <intent-filter>
+                <action android:name="android.media.action.DISPLAY_AUDIO_EFFECT_CONTROL_PANEL" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.CATEGORY_CONTENT_MUSIC" />
+            </intent-filter>
+	    </activity>
+        <service android:name="PlaybackService" android:exported="true" tools:ignore="ExportedService">
+			<intent-filter>
+				<action android:name="com.florentrevest.xound.action.PLAY" />
+				<action android:name="com.florentrevest.xound.action.PAUSE" />
+				<action android:name="com.florentrevest.xound.action.NEXT_SONG" />
+				<action android:name="com.florentrevest.xound.action.PREVIOUS_SONG" />
+			</intent-filter>
+		</service>
+		<service android:name="ArtistsInfoService" android:exported="false"/>
+		<receiver android:name=".RemoteControlReceiver">
+	    	<intent-filter>
+	    	    <action android:name="android.intent.action.ACTION_UMS_CONNECTED" />
+        		<action android:name="android.intent.action.MEDIA_BUTTON" />
+   			</intent-filter>
+		</receiver>
+		<receiver
+			android:name=".LongWidget"
+			android:label="Xound Music Player 4x1 Widget">
+			<intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+			</intent-filter>
+			<meta-data
+				android:name="android.appwidget.provider"
+				android:resource="@xml/long_widget" />
+		</receiver>
+    </application>
+</manifest>

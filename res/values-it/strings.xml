@@ -1,0 +1,30 @@
+<resources>
+
+    <string name="app_name">Xound</string>
+    <string name="menu_settings">Impostazioni</string>
+    <string name="empty_library">La tua biblioteca è vuoto!</string>
+	<string name="play_pause">Giocare/Pausa</string>
+	<string name="next_song">Canzone Successiva</string>
+	<string name="cover_art">Coperta di album</string>
+	<string name="close_notification">Chiudere la notifica</string>
+	<string name="slogan">What\'s a life without music?</string>
+	<string name="unknown_artists">Artisti Sconosciuti</string>
+	<string name="unknown_artist">Artista Sconosciuto</string>
+	<string name="equalizer">Equalizzatore</string>
+	<string name="about">Informazioni su&#8230;</string>
+	<string name="add_to_queue">Aggiungi alla coda</string>
+	<string name="scrobble_title">Scrobbling di Last.fm</string>
+	<string name="scrobble_summary">È necessario installare ScrobbleDroid dall Google Play Store</string>
+	<string name="share">Condividi&#8230;</string>
+	<string name="every_artists">Tutti Gli Artisti</string>
+	<string name="every_albums">Tutti Gli Album</string>
+	<string name="no_biography">Nessuna biografia è stata trovata.</string>
+	<string name="slide_to_left">Far scorrere verso sinistra per passare al brano successivo</string>
+	<string name="slide_to_right">Far scorrere verso destra per passare al brano precedente</string>
+	<string name="search_hint">Cerca&#8230;</string>
+	<string name="no_lyrics">Nessun testo trovato.</string>
+	<string name="equalizer_needed">È necessario installare un equalizzatore esterno (Ce ne sono molti di loro in Google Play Store).</string>
+	<string name="disableUSB">Si prega di disattivare la modalità USB da utilizzare Xound</string>
+	<string name="exit">Uscire</string>
+	
+</resources>
